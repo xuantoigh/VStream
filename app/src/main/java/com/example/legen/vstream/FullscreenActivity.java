@@ -2,20 +2,19 @@ package com.example.legen.vstream;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.MediaController;
-import android.widget.VideoView;
+import android.webkit.WebView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
+@SuppressLint("SetJavaScriptEnabled")
 public class FullscreenActivity extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -99,14 +98,14 @@ public class FullscreenActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        intent.getStringExtra("ip");
-        VideoView mVideoView5 = (VideoView) findViewById(R.id.webview5);
+        String ip = intent.getStringExtra("ip");
+        WebView mWebView5 = (WebView) findViewById(R.id.webview5);
 
-        MediaController mMediaController = new MediaController(FullscreenActivity.this);
-        mMediaController.setAnchorView(mVideoView5);
-        Uri video = Uri.parse(intent.getStringExtra("ip"));
-        mVideoView5.setMediaController( mMediaController);
-        mVideoView5.setVideoURI(video);
+        mWebView5.setWebViewClient(new MyWebViewClient(ip));
+        mWebView5.getSettings().setLoadsImagesAutomatically(true);
+        mWebView5.getSettings().setJavaScriptEnabled(true);
+        mWebView5.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView5.loadUrl(ip);
 
 
         // Set up the user interaction to manually show or hide the system UI.

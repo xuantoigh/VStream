@@ -1,24 +1,23 @@
 package com.example.legen.vstream;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.VideoView;
 
+@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends AppCompatActivity {
 
-    private VideoView mVideoView1;
-    private WebView  mWebView2, mWebView3, mWebView4;
+    private WebView mWebView1, mWebView2, mWebView3, mWebView4;
     private Button mButton1, mButton2, mButton3, mButton4;
 
-    final private String ip1 = "";
-    final private String ip2 = "http://169.254.201.103:9000/?action=stream";
-    final private String ip3 = "";
-    final private String ip4 = "";
+    final private String ip1 = "http://169.254.201.103:9000/javascript_simple.html";
+    final private String ip2 = "http://169.254.201.103:9000/javascript_simple.html";
+    final private String ip3 = "http://169.254.201.103:9000/javascript_simple.html";
+    final private String ip4 = "http://169.254.201.103:9000/javascript_simple.html";
 
 
     @Override
@@ -28,10 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         init();
         showFull();
+        run();
     }
 
     private void init(){
-        mVideoView1 = (VideoView) findViewById(R.id.videoView1);
+        mWebView1 = (WebView) findViewById(R.id.webView1);
         mWebView2 = (WebView) findViewById(R.id.webView2);
         mWebView3 = (WebView) findViewById(R.id.webView3);
         mWebView4 = (WebView) findViewById(R.id.webView4);
@@ -42,10 +42,33 @@ public class MainActivity extends AppCompatActivity {
         mButton4 = (Button) findViewById(R.id.button4);
     }
 
+    private void run(){
+        //cam 1
+        mWebView1.setWebViewClient(new MyWebViewClient(ip1));
+        mWebView1.getSettings().setLoadsImagesAutomatically(true);
+        mWebView1.getSettings().setJavaScriptEnabled(true);
+        mWebView1.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView1.loadUrl(ip1);
+        //cam 2
+        mWebView2.setWebViewClient(new MyWebViewClient(ip2));
+        mWebView2.getSettings().setLoadsImagesAutomatically(true);
+        mWebView2.getSettings().setJavaScriptEnabled(true);
+        mWebView2.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView2.loadUrl(ip2);
+        //cam 3
+        mWebView3.setWebViewClient(new MyWebViewClient(ip3));
+        mWebView3.getSettings().setLoadsImagesAutomatically(true);
+        mWebView3.getSettings().setJavaScriptEnabled(true);
+        mWebView3.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView3.loadUrl(ip3);
+        //cam 4
+        mWebView4.setWebViewClient(new MyWebViewClient(ip4));
+        mWebView4.getSettings().setLoadsImagesAutomatically(true);
+        mWebView4.getSettings().setJavaScriptEnabled(true);
+        mWebView4.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mWebView4.loadUrl(ip4);
+    }
     private void showFull(){
-        Uri video = Uri.parse(ip1);
-        //mVideoView1.setVideoURI(video);
-        //mVideoView1.setVideoPath(ip1);
         mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

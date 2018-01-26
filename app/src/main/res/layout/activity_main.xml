@@ -20,8 +20,8 @@
             app:layout_heightPercent="100%"
             app:layout_widthPercent="50%">
 
-            <VideoView
-                android:id="@+id/videoView1"
+            <WebView
+                android:id="@+id/webView1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

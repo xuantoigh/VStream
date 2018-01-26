@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private WebView mWebView1, mWebView2, mWebView3, mWebView4;
     private Button mButton1, mButton2, mButton3, mButton4;
 
-    final private String ip1 = "http://169.254.201.103:9000/javascript_simple.html";
-    final private String ip2 = "http://169.254.201.103:9000/javascript_simple.html";
-    final private String ip3 = "http://169.254.201.103:9000/javascript_simple.html";
-    final private String ip4 = "http://169.254.201.103:9000/javascript_simple.html";
+    private static final String ip1 = "http://169.254.201.103:9000/javascript_simple.html";
+    private static final String ip2 = "http://169.254.201.103:9000/javascript_simple.html";
+    private static final String ip3 = "http://169.254.201.103:9000/javascript_simple.html";
+    private static final String ip4 = "http://169.254.201.103:9000/javascript_simple.html";
 
 
     @Override

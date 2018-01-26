@@ -100,7 +100,7 @@ public class FullscreenActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         intent.getStringExtra("ip");
-        VideoView mVideoView5 = (VideoView) findViewById(R.id.webview5);
+        VideoView mVideoView5 = findViewById(R.id.webview5);
 
         MediaController mMediaController = new MediaController(FullscreenActivity.this);
         mMediaController.setAnchorView(mVideoView5);

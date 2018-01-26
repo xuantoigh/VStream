@@ -98,7 +98,7 @@ public class FullscreenActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String ip = intent.getStringExtra("ip");
-        WebView mWebView5 = (WebView) findViewById(R.id.webview5);
+        WebView mWebView5 = findViewById(R.id.webview5);
 
         mWebView5.setWebViewClient(new MyWebViewClient(ip));
         mWebView5.getSettings().setLoadsImagesAutomatically(true);

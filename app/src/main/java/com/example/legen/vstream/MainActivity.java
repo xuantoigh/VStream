@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init(){
-        mWebView1 = (WebView) findViewById(R.id.webView1);
-        mWebView2 = (WebView) findViewById(R.id.webView2);
-        mWebView3 = (WebView) findViewById(R.id.webView3);
-        mWebView4 = (WebView) findViewById(R.id.webView4);
+        mWebView1 = findViewById(R.id.webView1);
+        mWebView2 = findViewById(R.id.webView2);
+        mWebView3 = findViewById(R.id.webView3);
+        mWebView4 = findViewById(R.id.webView4);
 
-        mButton1 = (Button) findViewById(R.id.button1);
-        mButton2 = (Button) findViewById(R.id.button2);
-        mButton3 = (Button) findViewById(R.id.button3);
-        mButton4 = (Button) findViewById(R.id.button4);
+        mButton1 = findViewById(R.id.button1);
+        mButton2 = findViewById(R.id.button2);
+        mButton3 = findViewById(R.id.button3);
+        mButton4 = findViewById(R.id.button4);
     }
 
     private void run(){
